@@ -92,4 +92,8 @@ public:
 	const T & operator [] (int i) const {
 		return arr[i];
 	}
+
+	~Vector () {
+		delete [] arr;
+	}
 };

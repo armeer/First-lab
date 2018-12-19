@@ -73,4 +73,20 @@ public:
 		nodes.push_back(a);
 	}
 
+	void resize(int n) {
+		nodes.resize(n);
+		size = n;
+	}
+
+	void construct(T * begin, T * end) {
+		size = end - begin + 1;
+		this->resize(size);
+		for (int j = size - 1; j >= 0; j--) {
+			nodes[j] = end[j - size + 1];
+			siftDown(j);
+		}
+	}
+
+	~Heap() {
+	}
 };
